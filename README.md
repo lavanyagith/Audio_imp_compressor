@@ -1,4 +1,4 @@
-# Audio + Image/Video Compression System
+# Audio + Image Compression System
 
 A web-based multimedia compression system designed to reduce the size of **audio, image, and video files** while maintaining a practical balance between file size and media quality.
 
@@ -39,12 +39,6 @@ The system is designed as a lightweight multimedia compression application that 
 * Generate optimized/compressed images
 * Reduce image file size for easier storage and sharing
 
-### 🎬 Video Compression
-
-* Upload video files
-* Process video through the backend and compression pipeline
-* Generate a reduced-size video output
-* Maintain a practical balance between compression and quality
 
 ### 🌐 Web-Based Interface
 
