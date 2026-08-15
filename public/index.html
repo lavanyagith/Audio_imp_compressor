@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Compressor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>File Compressor</h1>
+            <p class="subtitle">Compress images and audio files easily</p>
+            
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-content">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <p class="upload-text">Drag & drop your file here</p>
+                    <p class="upload-hint">or click to browse</p>
+                    <p class="file-types">Supports: Images (JPG, PNG, WebP) & Audio (MP3, WAV, OGG)</p>
+                </div>
+                <input type="file" id="fileInput" accept=".jpg,.jpeg,.png,.bmp,.tiff,.webp,.mp3,.wav,.ogg,.flac,.m4a,.aac">
+            </div>
+            
+            <div class="file-info" id="fileInfo" style="display: none;">
+                <div class="file-details">
+                    <svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>
+                    <div class="file-meta">
+                        <p class="file-name" id="fileName"></p>
+                        <p class="file-size" id="fileSize"></p>
+                    </div>
+                    <button class="remove-btn" id="removeBtn" title="Remove file">×</button>
+                </div>
+            </div>
+            
+            <button class="compress-btn" id="compressBtn" disabled>
+                <span class="btn-text">Compress File</span>
+                <span class="btn-loader" style="display: none;">
+                    <svg class="spinner" viewBox="0 0 50 50">
+                        <circle cx="25" cy="25" r="20" fill="none" stroke="currentColor" stroke-width="4"></circle>
+                    </svg>
+                    Processing...
+                </span>
+            </button>
+            
+            <div class="progress-message" id="progressMessage" style="display: none;">
+                <p>Compressing your file... Please wait</p>
+            </div>
+            
+            <div class="result" id="result" style="display: none;">
+                <div class="result-header">
+                    <svg class="success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    <h3>Compression Complete!</h3>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Original Size</span>
+                        <span class="stat-value" id="originalSize"></span>
+                    </div>
+                    <div class="stat-arrow">→</div>
+                    <div class="stat-item">
+                        <span class="stat-label">Compressed</span>
+                        <span class="stat-value compressed" id="compressedSize"></span>
+                    </div>
+                </div>
+                
+                <div class="savings" id="savings"></div>
+                
+                <div class="preview-container" id="previewContainer"></div>
+                
+                <a href="#" class="download-btn" id="downloadBtn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Download Compressed File
+                </a>
+            </div>
+            
+            <div class="error-message" id="errorMessage" style="display: none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <p id="errorText"></p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
